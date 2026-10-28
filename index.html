@@ -1,309 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Treino Certo: aprenda como executar exercícios de musculação com orientações e vídeos demonstrativos.">
-    <title>Treino Certo | Guia de Exercícios</title>
-
-    <!-- Vamos criar este arquivo na próxima etapa -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Vamos criar este arquivo depois do CSS -->
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprenda sobre exercícios de musculação com demonstrações em vídeo.">
+  <title>Treino Certo | Biblioteca de Exercícios</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <header class="cabecalho">
-        <a class="logo" href="#inicio">Guia<span>Fit</span></a>
+  <header class="topo">
+    <a class="logo" href="#">🏋️ Treino <span>Certo</span></a>
+    <nav>
+      <a href="#exercicios">Exercícios</a>
+      <a href="#seguranca">Segurança</a>
+    </nav>
+  </header>
 
-        <nav class="menu" aria-label="Menu principal">
-            <a href="#inicio">Início</a>
-            <a href="#exercicios">Exercícios</a>
-            <a href="#sobre">Sobre</a>
-        </nav>
-    </header>
+  <main>
+    <section class="hero">
+      <span class="etiqueta">SUA BIBLIOTECA FITNESS</span>
+      <h1>Aprenda a treinar.<br><span>Um exercício de cada vez.</span></h1>
+      <p>Explore exercícios, conheça os grupos musculares e veja demonstrações em vídeo.</p>
+      <a class="botao-principal" href="#exercicios">Explorar exercícios ↓</a>
+      <div class="numeros">
+        <div><strong>42</strong><span>exercícios</span></div>
+        <div><strong>7</strong><span>grupos musculares</span></div>
+        <div><strong>Vídeos</strong><span>demonstrações</span></div>
+      </div>
+    </section>
 
-    <main>
-        <section class="hero" id="inicio">
-            <div class="hero-conteudo">
-                <p class="etiqueta">SEU GUIA DE MUSCULAÇÃO</p>
+    <section class="biblioteca" id="exercicios">
+      <div class="titulo-secao">
+        <span class="etiqueta">BIBLIOTECA</span>
+        <h2>Encontre seu exercício</h2>
+        <p>Pesquise pelo nome ou filtre por grupo muscular.</p>
+      </div>
 
-                <h1>Treine com conhecimento.<br>
-                    <span>Execute com confiança.</span>
-                </h1>
+      <label class="campo-busca">
+        <span>⌕</span>
+        <input id="busca" type="search"
+          placeholder="Ex.: supino, agachamento, rosca..."
+          aria-label="Pesquisar exercícios">
+      </label>
 
-                <p class="hero-texto">
-                    Descubra exercícios, conheça os músculos trabalhados
-                    e aprenda os movimentos com orientações e vídeos de referência.
-                </p>
+      <div class="filtros" aria-label="Filtrar por grupo muscular">
+        <button class="filtro ativo" data-grupo="todos">Todos</button>
+        <button class="filtro" data-grupo="peito">Peito</button>
+        <button class="filtro" data-grupo="costas">Costas</button>
+        <button class="filtro" data-grupo="pernas">Pernas</button>
+        <button class="filtro" data-grupo="ombros">Ombros</button>
+        <button class="filtro" data-grupo="biceps">Bíceps</button>
+        <button class="filtro" data-grupo="triceps">Tríceps</button>
+        <button class="filtro" data-grupo="abdomen">Abdômen e core</button>
+      </div>
 
-                <a class="botao-principal" href="#exercicios">
-                    Explorar exercícios
-                </a>
-            </div>
-        </section>
+      <p class="contador" id="contador" aria-live="polite"></p>
+      <div class="lista-exercicios" id="lista-exercicios"></div>
+      <p class="mensagem-vazia" id="mensagem-vazia" hidden>
+        Não encontramos exercícios com esse nome. Tente outra pesquisa!
+      </p>
+    </section>
 
-        <section class="introducao" id="sobre">
-            <p class="etiqueta">APRENDA DO JEITO CERTO</p>
-            <h2>Conhecimento para cada treino</h2>
+    <section class="seguranca" id="seguranca">
+      <div class="icone-seguranca">✓</div>
+      <div>
+        <h2>Treine com segurança</h2>
+        <p>Os vídeos são referências educativas. Comece com cargas confortáveis,
+        aprenda a técnica e peça orientação a um profissional de Educação Física.
+        Interrompa o exercício se sentir dor.</p>
+      </div>
+    </section>
+  </main>
 
-            <div class="beneficios">
-                <article class="beneficio">
-                    <span class="icone">📖</span>
-                    <h3>Aprenda</h3>
-                    <p>Entenda como cada exercício funciona e quais músculos ele trabalha.</p>
-                </article>
-
-                <article class="beneficio">
-                    <span class="icone">🎥</span>
-                    <h3>Veja na prática</h3>
-                    <p>Consulte vídeos demonstrativos para compreender os movimentos.</p>
-                </article>
-
-                <article class="beneficio">
-                    <span class="icone">🛡️</span>
-                    <h3>Treine com cuidado</h3>
-                    <p>Conheça orientações básicas para executar os movimentos com atenção.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="biblioteca" id="exercicios">
-            <div class="titulo-secao">
-                <p class="etiqueta">BIBLIOTECA DE MOVIMENTOS</p>
-                <h2>Encontre seu exercício</h2>
-                <p>Pesquise pelo nome ou escolha um grupo muscular.</p>
-            </div>
-
-            <div class="pesquisa">
-                <label for="busca">Pesquisar exercício</label>
-                <input
-                    type="search"
-                    id="busca"
-                    placeholder="Ex.: supino, agachamento..."
-                    autocomplete="off"
-                >
-            </div>
-
-            <div class="filtros" aria-label="Filtrar por grupo muscular">
-                <button class="filtro ativo" data-grupo="todos" type="button">
-                    Todos
-                </button>
-                <button class="filtro" data-grupo="peito" type="button">Peito</button>
-                <button class="filtro" data-grupo="costas" type="button">Costas</button>
-                <button class="filtro" data-grupo="ombros" type="button">Ombros</button>
-                <button class="filtro" data-grupo="bracos" type="button">Braços</button>
-                <button class="filtro" data-grupo="pernas" type="button">Pernas</button>
-                <button class="filtro" data-grupo="abdomen" type="button">Abdômen</button>
-            </div>
-
-            <div class="lista-exercicios" id="lista-exercicios">
-
-                <article class="exercicio-card" data-grupo="peito">
-                    <div class="card-imagem imagem-peito">
-                        <span>PEITO</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Peitoral</p>
-                        <h3>Supino reto com halteres</h3>
-                        <p>Exercício para trabalhar principalmente os músculos do peito, com participação dos ombros e tríceps.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Deite-se no banco e mantenha os pés apoiados.</li>
-                            <li>Segure os halteres com controle, próximos ao peito.</li>
-                            <li>Empurre os pesos para cima sem dar trancos.</li>
-                            <li>Desça lentamente, mantendo o movimento confortável.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante com orientação</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+dumbbell+bench+press+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-                <article class="exercicio-card" data-grupo="costas">
-                    <div class="card-imagem imagem-costas">
-                        <span>COSTAS</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Dorsais</p>
-                        <h3>Puxada frontal na polia</h3>
-                        <p>Trabalha principalmente os músculos das costas, com participação dos braços.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Ajuste o banco e sente-se com os pés apoiados.</li>
-                            <li>Segure a barra com uma pegada confortável.</li>
-                            <li>Puxe a barra em direção à parte superior do peito.</li>
-                            <li>Retorne devagar, sem balançar o corpo.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+lat+pulldown+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-                <article class="exercicio-card" data-grupo="pernas">
-                    <div class="card-imagem imagem-pernas">
-                        <span>PERNAS</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Quadríceps e glúteos</p>
-                        <h3>Agachamento livre</h3>
-                        <p>Movimento que trabalha coxas e glúteos, além de exigir estabilidade do tronco.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Posicione os pés aproximadamente na largura dos ombros.</li>
-                            <li>Mantenha os pés apoiados e o tronco estável.</li>
-                            <li>Flexione os joelhos e o quadril até onde for confortável.</li>
-                            <li>Volte à posição inicial sem perder o controle.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante com orientação</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+bodyweight+squat+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-                <article class="exercicio-card" data-grupo="ombros">
-                    <div class="card-imagem imagem-ombros">
-                        <span>OMBROS</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Deltoides</p>
-                        <h3>Elevação lateral</h3>
-                        <p>Exercício que enfatiza a parte lateral dos ombros.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Fique em pé, segurando halteres leves ao lado do corpo.</li>
-                            <li>Mantenha os ombros relaxados e o tronco estável.</li>
-                            <li>Eleve os braços lateralmente, sem usar impulso.</li>
-                            <li>Desça os halteres devagar.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+lateral+raise+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-                <article class="exercicio-card" data-grupo="bracos">
-                    <div class="card-imagem imagem-bracos">
-                        <span>BÍCEPS</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Bíceps</p>
-                        <h3>Rosca direta com halteres</h3>
-                        <p>Exercício para fortalecer os bíceps, músculos da parte anterior dos braços.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Fique em pé com um halter em cada mão.</li>
-                            <li>Mantenha os cotovelos próximos ao corpo.</li>
-                            <li>Flexione os cotovelos para elevar os pesos.</li>
-                            <li>Desça lentamente sem balançar o tronco.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+dumbbell+biceps+curl+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-                <article class="exercicio-card" data-grupo="abdomen">
-                    <div class="card-imagem imagem-abdomen">
-                        <span>ABDÔMEN</span>
-                    </div>
-
-                    <div class="card-conteudo">
-                        <p class="categoria">Região abdominal</p>
-                        <h3>Prancha abdominal</h3>
-                        <p>Exercício isométrico que trabalha o abdômen e outros músculos estabilizadores.</p>
-
-                        <h4>Como executar</h4>
-                        <ol>
-                            <li>Apoie os antebraços e as pontas dos pés no chão.</li>
-                            <li>Mantenha o corpo alinhado e o abdômen ativo.</li>
-                            <li>Respire normalmente durante o exercício.</li>
-                            <li>Encerre quando não conseguir manter a postura.</li>
-                        </ol>
-
-                        <p class="nivel">Nível: iniciante</p>
-
-                        <a
-                            class="botao-video"
-                            href="https://www.youtube.com/results?search_query=ACE+Fitness+forearm+plank+proper+form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >▶ Ver vídeo demonstrativo</a>
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="mensagem-vazia" id="mensagem-vazia" hidden>
-                Nenhum exercício encontrado. Tente outro nome ou categoria.
-            </p>
-        </section>
-
-        <section class="seguranca">
-            <p class="etiqueta">ANTES DE COMEÇAR</p>
-            <h2>Seu treino também precisa de cuidado</h2>
-
-            <ul>
-                <li>Aprenda a técnica com um profissional de educação física.</li>
-                <li>Escolha uma carga que permita executar o movimento com controle.</li>
-                <li>Não force um movimento que cause dor.</li>
-                <li>Respeite seus limites e descanse quando necessário.</li>
-            </ul>
-
-            <p class="aviso">
-                Este site é educativo e não substitui a orientação individual
-                de um profissional de educação física.
-            </p>
-        </section>
-    </main>
-
-    <footer class="rodape">
-        <a class="logo" href="#inicio">Guia<span>Fit</span></a>
-        <p>Aprender, praticar e evoluir com responsabilidade.</p>
-        <p>© 2026 Treino Certo — Projeto educativo.</p>
-    </footer>
+  <footer>
+    <a class="logo" href="#">🏋️ Treino <span>Certo</span></a>
+    <p>Aprender, praticar e evoluir com responsabilidade.</p>
+    <small>Projeto educativo independente · 2026</small>
+  </footer>
 </body>
 </html>

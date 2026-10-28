@@ -1,520 +1,394 @@
-
-/* =================================
-   GUIAFIT - ESTILO PRINCIPAL
-================================= */
-
 :root {
-    --fundo: #101410;
-    --fundo-card: #1a211b;
-    --verde: #8fcf78;
-    --verde-escuro: #527e43;
-    --branco: #f4f6f2;
-    --texto: #b8c0b7;
-    --borda: #303a30;
+  --fundo: #0c100e;
+  --painel: #141a16;
+  --painel-claro: #1b241e;
+  --verde: #7cf2a5;
+  --texto: #f2f5f2;
+  --suave: #a0aaa2;
+  --borda: #29342c;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--fundo);
-    color: var(--branco);
-    line-height: 1.7;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-button,
-input {
-    font: inherit;
+button, input {
+  font: inherit;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-    outline: 2px solid var(--verde);
-    outline-offset: 4px;
-}
-
-/* CABEÇALHO */
-
-.cabecalho {
-    min-height: 76px;
-    padding: 16px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    background: #151b15;
-    border-bottom: 1px solid var(--borda);
+.topo {
+  min-height: 74px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--borda);
+  background: #0c100e;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-    font-size: 29px;
-    font-weight: 800;
-    letter-spacing: -1px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-.logo span {
-    color: var(--verde);
+.logo span, .hero h1 span {
+  color: var(--verde);
 }
 
-.menu {
-    display: flex;
-    gap: 30px;
+.topo nav {
+  display: flex;
+  gap: 24px;
+  color: var(--suave);
+  font-size: 0.92rem;
 }
 
-.menu a {
-    color: var(--texto);
-    transition: color 0.2s;
+.topo nav a:hover {
+  color: var(--verde);
 }
-
-.menu a:hover {
-    color: var(--verde);
-}
-
-/* APRESENTAÇÃO */
 
 .hero {
-    min-height: 440px;
-    display: flex;
-    align-items: center;
-    padding: 80px 10%;
-    background:
-        radial-gradient(
-            ellipse at 85% 35%,
-            rgba(83, 126, 67, 0.24),
-            transparent 55%
-        ),
-        linear-gradient(135deg, #172017, #101410 75%);
-    border-bottom: 1px solid var(--borda);
-}
-
-.hero-conteudo {
-    max-width: 760px;
+  padding: 85px 7% 65px;
+  background:
+    radial-gradient(ellipse at 75% 20%, #183b263d, transparent 50%),
+    var(--fundo);
 }
 
 .etiqueta {
-    color: var(--verde);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .hero h1 {
-    font-size: clamp(34px, 5vw, 58px);
-    line-height: 1.15;
-    margin-bottom: 24px;
-    letter-spacing: -1.5px;
+  margin: 17px 0;
+  max-width: 760px;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
 }
 
-.hero h1 span {
-    color: var(--verde);
-}
-
-.hero-texto {
-    color: var(--texto);
-    max-width: 600px;
-    font-size: 17px;
-    margin-bottom: 30px;
+.hero > p {
+  max-width: 570px;
+  color: var(--suave);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
 }
 
 .botao-principal {
-    display: inline-block;
-    background: var(--verde);
-    color: #142011;
-    padding: 13px 24px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: transform 0.2s, background 0.2s;
+  display: inline-block;
+  background: var(--verde);
+  color: #102016;
+  font-weight: 800;
+  padding: 13px 20px;
+  border-radius: 9px;
+  transition: transform 0.2s, background 0.2s;
 }
 
 .botao-principal:hover {
-    background: #a7e291;
-    transform: translateY(-2px);
+  background: #a2ffc0;
+  transform: translateY(-2px);
 }
 
-/* INTRODUÇÃO E BENEFÍCIOS */
-
-.introducao,
-.biblioteca,
-.seguranca {
-    padding: 75px 8%;
+.numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+  margin-top: 52px;
 }
 
-.introducao h2,
-.titulo-secao h2,
-.seguranca h2 {
-    font-size: clamp(26px, 3vw, 36px);
-    line-height: 1.25;
-    margin-bottom: 16px;
+.numeros div {
+  display: flex;
+  flex-direction: column;
 }
 
-.beneficios {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    margin-top: 32px;
+.numeros strong {
+  font-size: 1.4rem;
+  color: var(--verde);
 }
 
-.beneficio {
-    background: var(--fundo-card);
-    border: 1px solid var(--borda);
-    border-radius: 12px;
-    padding: 25px;
-    transition: transform 0.2s, border-color 0.2s;
+.numeros span {
+  color: var(--suave);
+  font-size: 0.85rem;
 }
-
-.beneficio:hover {
-    transform: translateY(-4px);
-    border-color: var(--verde-escuro);
-}
-
-.icone {
-    display: block;
-    font-size: 29px;
-    margin-bottom: 10px;
-}
-
-.beneficio h3 {
-    margin-bottom: 8px;
-}
-
-.beneficio p {
-    color: var(--texto);
-    font-size: 14px;
-}
-
-/* BIBLIOTECA DE EXERCÍCIOS */
 
 .biblioteca {
-    background: #141a14;
-    border-top: 1px solid var(--borda);
-    border-bottom: 1px solid var(--borda);
+  padding: 65px 7% 80px;
+  border-top: 1px solid var(--borda);
 }
 
-.titulo-secao {
-    margin-bottom: 30px;
+.titulo-secao h2, .seguranca h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin: 7px 0;
 }
 
-.titulo-secao > p:last-child {
-    color: var(--texto);
+.titulo-secao > p, .seguranca p {
+  color: var(--suave);
 }
 
-.pesquisa {
-    max-width: 650px;
-    margin-bottom: 22px;
+.campo-busca {
+  margin: 28px 0 18px;
+  max-width: 650px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--painel);
 }
 
-.pesquisa label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
+.campo-busca span {
+  font-size: 1.7rem;
+  color: var(--verde);
 }
 
-.pesquisa input {
-    width: 100%;
-    background: var(--fundo);
-    color: var(--branco);
-    border: 1px solid var(--borda);
-    padding: 14px 16px;
-    border-radius: 8px;
+.campo-busca input {
+  background: transparent;
+  color: var(--texto);
+  border: 0;
+  outline: 0;
+  width: 100%;
+  min-width: 0;
 }
 
-.pesquisa input::placeholder {
-    color: #899389;
-}
-
-.pesquisa input:focus {
-    border-color: var(--verde);
-    outline: 2px solid rgba(143, 207, 120, 0.18);
+.campo-busca input::placeholder {
+  color: #7d8980;
 }
 
 .filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 20px 0;
 }
 
 .filtro {
-    padding: 9px 16px;
-    color: var(--texto);
-    background: var(--fundo-card);
-    border: 1px solid var(--borda);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.2s;
+  cursor: pointer;
+  padding: 9px 15px;
+  border: 1px solid var(--borda);
+  border-radius: 30px;
+  color: var(--suave);
+  background: var(--painel);
+  transition: 0.2s;
 }
 
-.filtro:hover,
-.filtro.ativo {
-    color: #142011;
-    background: var(--verde);
-    border-color: var(--verde);
+.filtro:hover, .filtro.ativo {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #102016;
+  font-weight: 700;
 }
 
-/* CARTÕES */
+.contador {
+  color: var(--suave);
+  font-size: 0.88rem;
+  margin: 22px 0 13px;
+}
 
 .lista-exercicios {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .exercicio-card {
-    min-width: 0;
-    overflow: hidden;
-    background: var(--fundo-card);
-    border: 1px solid var(--borda);
-    border-radius: 13px;
-    transition: transform 0.2s, border-color 0.2s;
+  min-width: 0;
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
 .exercicio-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--verde-escuro);
-}
-
-.card-imagem {
-    min-height: 135px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background:
-        radial-gradient(
-            circle at 70% 30%,
-            rgba(143, 207, 120, 0.20),
-            transparent 50%
-        ),
-        linear-gradient(135deg, #273729, #182019);
-    border-bottom: 1px solid var(--borda);
-}
-
-.card-imagem span {
-    font-size: 21px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: var(--verde);
-}
-
-.imagem-peito {
-    background-color: #273629;
-}
-
-.imagem-costas {
-    background-color: #26342b;
-}
-
-.imagem-pernas {
-    background-color: #293626;
-}
-
-.imagem-ombros {
-    background-color: #24352a;
-}
-
-.imagem-bracos {
-    background-color: #2b3626;
-}
-
-.imagem-abdomen {
-    background-color: #27342b;
+  border-color: #50795b;
+  transform: translateY(-3px);
 }
 
 .card-conteudo {
-    padding: 22px;
+  padding: 20px;
 }
 
-.categoria {
-    color: var(--verde);
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 7px;
+.tag-grupo {
+  display: inline-block;
+  background: #203c29;
+  color: var(--verde);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 9px;
+  border-radius: 20px;
 }
 
-.card-conteudo h3 {
-    font-size: 21px;
-    line-height: 1.3;
-    margin-bottom: 12px;
+.exercicio-card h3 {
+  font-size: 1.12rem;
+  line-height: 1.35;
+  margin: 14px 0 8px;
 }
 
-.card-conteudo > p:not(.categoria):not(.nivel) {
-    color: var(--texto);
-    font-size: 14px;
-    margin-bottom: 22px;
-}
-
-.card-conteudo h4 {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.card-conteudo ol {
-    padding-left: 21px;
-    color: var(--texto);
-    font-size: 14px;
-}
-
-.card-conteudo li {
-    padding-left: 3px;
-    margin-bottom: 9px;
-}
-
-.nivel {
-    margin-top: 20px;
-    margin-bottom: 18px;
-    color: var(--verde);
-    font-size: 13px;
-    font-weight: bold;
+.exercicio-card p {
+  color: var(--suave);
+  font-size: 0.9rem;
+  min-height: 45px;
 }
 
 .botao-video {
-    display: block;
-    text-align: center;
-    background: #273a26;
-    border: 1px solid #476441;
-    color: var(--branco);
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.2s;
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px 13px;
+  border: 1px solid #395d43;
+  border-radius: 8px;
+  background: #1b3021;
+  color: var(--verde);
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .botao-video:hover {
-    background: var(--verde);
-    color: #142011;
+  background: #284932;
+}
+
+.video-container {
+  padding: 0 14px 14px;
+}
+
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 0;
+  border-radius: 8px;
+  background: #000;
+}
+
+.link-video {
+  display: inline-block;
+  color: var(--verde);
+  font-size: 0.84rem;
+  text-decoration: underline;
+  margin-top: 9px;
 }
 
 .mensagem-vazia {
-    color: var(--texto);
-    text-align: center;
-    padding: 35px 10px;
+  padding: 30px 0;
+  color: var(--suave);
 }
 
-/* SEGURANÇA */
+[hidden] {
+  display: none !important;
+}
 
 .seguranca {
-    max-width: 1100px;
-    margin: auto;
+  margin: 0 7% 70px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
 }
 
-.seguranca ul {
-    padding-left: 23px;
-    color: var(--texto);
-    margin-top: 20px;
+.icone-seguranca {
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--verde);
+  background: #203c29;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
-.seguranca li {
-    margin-bottom: 10px;
+.seguranca p {
+  max-width: 850px;
 }
 
-.aviso {
-    margin-top: 25px;
-    padding: 18px;
-    border-left: 3px solid var(--verde);
-    background: var(--fundo-card);
-    color: var(--texto);
-    border-radius: 0 8px 8px 0;
-    font-size: 14px;
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid var(--borda);
+  text-align: center;
 }
 
-/* RODAPÉ */
-
-.rodape {
-    text-align: center;
-    padding: 35px 20px;
-    background: #151b15;
-    border-top: 1px solid var(--borda);
+footer p, footer small {
+  color: var(--suave);
+  font-size: 0.88rem;
 }
 
-.rodape p {
-    color: var(--texto);
-    font-size: 13px;
-    margin-top: 8px;
+footer p {
+  margin: 7px 0;
 }
-
-/* RESPONSIVIDADE: TABLETS */
 
 @media (max-width: 950px) {
-    .lista-exercicios {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .beneficios {
-        grid-template-columns: 1fr;
-    }
-
-    .introducao,
-    .biblioteca,
-    .seguranca {
-        padding: 55px 6%;
-    }
+  .lista-exercicios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* RESPONSIVIDADE: CELULARES */
-
 @media (max-width: 600px) {
-    .cabecalho {
-        padding: 14px 5%;
-        flex-wrap: wrap;
-    }
+  .topo {
+    padding: 13px 5%;
+  }
 
-    .logo {
-        font-size: 25px;
-    }
+  .topo nav {
+    gap: 12px;
+    font-size: 0.82rem;
+  }
 
-    .menu {
-        gap: 15px;
-        font-size: 13px;
-    }
+  .logo {
+    font-size: 1.05rem;
+  }
 
-    .hero {
-        min-height: 390px;
-        padding: 60px 6%;
-    }
+  .hero {
+    padding: 60px 5% 45px;
+  }
 
-    .hero h1 {
-        font-size: 35px;
-    }
+  .hero h1 {
+    letter-spacing: -1px;
+  }
 
-    .hero-texto {
-        font-size: 15px;
-    }
+  .numeros {
+    gap: 22px;
+  }
 
-    .lista-exercicios {
-        grid-template-columns: 1fr;
-    }
+  .biblioteca {
+    padding: 50px 5%;
+  }
 
-    .introducao,
-    .biblioteca,
-    .seguranca {
-        padding: 45px 5%;
-    }
+  .lista-exercicios {
+    grid-template-columns: 1fr;
+  }
 
-    .card-imagem {
-        min-height: 110px;
-    }
+  .seguranca {
+    margin: 0 5% 50px;
+    padding: 20px;
+    gap: 12px;
+  }
 }
